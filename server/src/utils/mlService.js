@@ -9,6 +9,7 @@
  */
 
 const http = require('http');
+const https = require('https');
 
 const ML_HOST = process.env.ML_HOST || 'localhost';
 const ML_PORT = process.env.ML_PORT || 5001;
@@ -20,9 +21,13 @@ const ML_PORT = process.env.ML_PORT || 5001;
 function callML(path, body) {
   return new Promise((resolve, reject) => {
     const payload = JSON.stringify(body);
+    const isLocal = ML_HOST === 'localhost' || ML_HOST === '127.0.0.1';
+    const client = isLocal ? http : https;
+    const port = isLocal ? ML_PORT : 443;
+    
     const options = {
       hostname: ML_HOST,
-      port:     ML_PORT,
+      port:     port,
       path,
       method:   'POST',
       headers: {
@@ -32,7 +37,7 @@ function callML(path, body) {
       timeout: 5000,
     };
 
-    const req = http.request(options, (res) => {
+    const req = client.request(options, (res) => {
       let data = '';
       res.on('data', chunk => { data += chunk; });
       res.on('end', () => {

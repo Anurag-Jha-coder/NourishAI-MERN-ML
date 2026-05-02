@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-export const API = '/api';   // proxied to http://localhost:5000 via package.json proxy
+export const API = process.env.REACT_APP_API_URL || '/api';   // proxied to http://localhost:5000 via package.json proxy locally
 
 const AuthContext = createContext(null);
 

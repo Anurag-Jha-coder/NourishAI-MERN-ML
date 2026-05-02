@@ -13,7 +13,11 @@ const shoppingRoutes = require('./routes/shopping');
 const app = express();
 
 // ── Middleware ──────────────────────────────────────────────
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+const corsOptions = {
+  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  credentials: true
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan('dev'));
 
