@@ -1,0 +1,366 @@
+/* ─────────────────────────────────────────────────────────────
+   FeedbackWidget.css  —  NourishAI feedback form
+   ───────────────────────────────────────────────────────────── */
+
+.fw-root {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #fffbeb 100%);
+  border: 1px solid #d1fae5;
+  border-radius: 18px;
+  padding: 1.75rem 1.75rem 1.5rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  animation: fw-fadein 0.4s ease;
+}
+
+@keyframes fw-fadein {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.fw-header {
+  margin-bottom: 1.4rem;
+}
+
+.fw-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #16a34a;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-bottom: 0.5rem;
+}
+
+.fw-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.fw-subtitle {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+/* ── Section ─────────────────────────────────────────────────── */
+.fw-section {
+  margin-bottom: 1.4rem;
+}
+
+.fw-section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Stars ───────────────────────────────────────────────────── */
+.fw-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 0.4rem;
+}
+
+.fw-star {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #e2e8f0;
+  line-height: 1;
+  padding: 2px;
+  transition: color 0.15s, transform 0.12s;
+}
+
+.fw-star:not(:disabled):hover,
+.fw-star.on {
+  color: #f59e0b;
+}
+
+.fw-star:not(:disabled):hover {
+  transform: scale(1.2);
+}
+
+.fw-star:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.fw-rating-text {
+  font-size: 0.82rem;
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+/* ── Food checklist ──────────────────────────────────────────── */
+.fw-food-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.fw-food-grid::-webkit-scrollbar {
+  width: 4px;
+}
+.fw-food-grid::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+.fw-food-grid::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+.fw-food-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 8px 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.fw-food-item.eaten  { border-color: #86efac; background: #f0fdf4; }
+.fw-food-item.skipped { border-color: #fca5a5; background: #fff1f2; }
+
+.fw-food-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1e293b;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fw-food-btns {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.fw-food-btn {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.fw-food-btn:not(:disabled):hover { filter: brightness(0.96); }
+.fw-food-btn:disabled { cursor: not-allowed; opacity: 0.55; }
+
+.fw-food-btn.ate        { border-color: #86efac; }
+.fw-food-btn.ate.active { background: #16a34a; color: #fff; border-color: #16a34a; }
+
+.fw-food-btn.skip        { border-color: #fca5a5; }
+.fw-food-btn.skip.active { background: #dc2626; color: #fff; border-color: #dc2626; }
+
+/* ── Optional toggle ─────────────────────────────────────────── */
+.fw-optional-toggle {
+  display: block;
+  width: 100%;
+  background: none;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 8px 0;
+  font-size: 0.8rem;
+  color: #64748b;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.fw-optional-toggle:hover {
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+/* ── Optional section ─────────────────────────────────────────── */
+.fw-optional {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  animation: fw-fadein 0.25s ease;
+}
+
+/* ── Sliders ──────────────────────────────────────────────────── */
+.fw-slider-row {
+  margin-bottom: 1.1rem;
+}
+
+.fw-slider-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.fw-slider-val {
+  margin-left: auto;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #16a34a;
+  min-width: 24px;
+  text-align: right;
+}
+
+.fw-slider {
+  width: 100%;
+  accent-color: #16a34a;
+  cursor: pointer;
+}
+
+.fw-slider:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fw-slider-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: #94a3b8;
+  margin-top: 2px;
+  padding: 0 2px;
+}
+
+/* ── Weight input ─────────────────────────────────────────────── */
+.fw-weight-row {
+  margin-top: 0.5rem;
+}
+
+.fw-slider-hint {
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.fw-weight-input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #1e293b;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.fw-weight-input:focus {
+  border-color: #16a34a;
+  background: #fff;
+}
+
+.fw-weight-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Submit button ────────────────────────────────────────────── */
+.fw-submit {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 13px 0;
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+}
+
+.fw-submit:not(:disabled):hover {
+  opacity: 0.93;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.40);
+}
+
+.fw-submit:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.fw-submit:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ── Done state ───────────────────────────────────────────────── */
+.fw-done {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.fw-done-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.fw-done-msg {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin: 0 0 0.3rem;
+}
+
+.fw-done-sub {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Locked state ─────────────────────────────────────────────── */
+.fw-locked {
+  text-align: center;
+  padding: 1.5rem;
+  color: #64748b;
+  font-size: 0.88rem;
+}
+
+.fw-locked-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .fw-root {
+    padding: 1.25rem 1rem;
+    border-radius: 14px;
+  }
+  .fw-star {
+    font-size: 1.7rem;
+  }
+  .fw-food-btns {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

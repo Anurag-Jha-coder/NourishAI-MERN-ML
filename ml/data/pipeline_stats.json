@@ -1,0 +1,53 @@
+{
+  "total_foods": 7748,
+  "columns": [
+    "name",
+    "calories",
+    "protein",
+    "carbs",
+    "fat",
+    "fiber",
+    "sugar",
+    "category",
+    "diet_type",
+    "region",
+    "meal_type",
+    "health_tags",
+    "glycemic_index"
+  ],
+  "category_distribution": {
+    "protein": 2906,
+    "grain": 1192,
+    "other": 1083,
+    "vegetable": 607,
+    "dairy": 568,
+    "fruit": 498,
+    "snack": 292,
+    "beverage": 243,
+    "spice": 241,
+    "oil": 89,
+    "nut": 29
+  },
+  "diet_type_distribution": {
+    "vegan": 3814,
+    "non-veg": 2983,
+    "veg": 951
+  },
+  "glycemic_distribution": {
+    "low": 5209,
+    "high": 1313,
+    "medium": 1226
+  },
+  "region_distribution": {
+    "global": 7666,
+    "north_india": 61,
+    "india": 18,
+    "south_india": 3
+  },
+  "nutrition_stats": {
+    "avg_calories": 220.6,
+    "avg_protein": 12.0,
+    "avg_carbs": 19.7,
+    "avg_fat": 10.6
+  }
+}

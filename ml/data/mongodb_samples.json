@@ -1,0 +1,116 @@
+[
+  {
+    "name": "bread, gluten-free, white, made with rice flour, corn starch, and/or tapioca",
+    "calories": 248.0,
+    "protein": 4.31,
+    "carbs": 45.78,
+    "fat": 5.24,
+    "fiber": 4.3,
+    "sugar": 3.53,
+    "category": "grain",
+    "diet_type": "vegan",
+    "region": "global",
+    "meal_type": [
+      "breakfast",
+      "lunch",
+      "dinner"
+    ],
+    "health_tags": [
+      "diabetes-friendly"
+    ],
+    "glycemic_index": "medium"
+  },
+  {
+    "name": "glutino, gluten free wafers, milk chocolate",
+    "calories": 541.0,
+    "protein": 4.06,
+    "carbs": 62.82,
+    "fat": 30.42,
+    "fiber": 1.6,
+    "sugar": 40.99,
+    "category": "dairy",
+    "diet_type": "veg",
+    "region": "global",
+    "meal_type": [
+      "beverage"
+    ],
+    "health_tags": [],
+    "glycemic_index": "high"
+  },
+  {
+    "name": "nance, canned, syrup, drained",
+    "calories": 95.0,
+    "protein": 0.56,
+    "carbs": 22.79,
+    "fat": 1.28,
+    "fiber": 7.0,
+    "sugar": 15.66,
+    "category": "other",
+    "diet_type": "vegan",
+    "region": "global",
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "health_tags": [
+      "very-low-calorie",
+      "weight-loss",
+      "low-fat",
+      "heart-healthy",
+      "high-fiber"
+    ],
+    "glycemic_index": "medium"
+  },
+  {
+    "name": "beans, snap, yellow, canned, regular pack, solids and liquids",
+    "calories": 15.0,
+    "protein": 0.8,
+    "carbs": 3.5,
+    "fat": 0.1,
+    "fiber": 1.5,
+    "sugar": 0.62,
+    "category": "protein",
+    "diet_type": "vegan",
+    "region": "global",
+    "meal_type": [
+      "lunch",
+      "dinner"
+    ],
+    "health_tags": [
+      "very-low-calorie",
+      "weight-loss",
+      "low-carb",
+      "keto-friendly",
+      "low-fat",
+      "heart-healthy",
+      "diabetes-friendly",
+      "diabetes-friendly"
+    ],
+    "glycemic_index": "low"
+  },
+  {
+    "name": "pork, cured, ham and water product, rump, bone-in, separable lean and fat, unheated",
+    "calories": 179.0,
+    "protein": 16.09,
+    "carbs": 1.35,
+    "fat": 12.13,
+    "fiber": 0.0,
+    "sugar": 0.88,
+    "category": "protein",
+    "diet_type": "non-veg",
+    "region": "global",
+    "meal_type": [
+      "beverage"
+    ],
+    "health_tags": [
+      "weight-loss",
+      "high-protein",
+      "good-protein",
+      "low-carb",
+      "keto-friendly",
+      "diabetes-friendly",
+      "diabetes-friendly"
+    ],
+    "glycemic_index": "low"
+  }
+]

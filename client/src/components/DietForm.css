@@ -1,0 +1,142 @@
+/* DietForm.css Additions */
+
+.wizard-progress-container {
+  margin-top: 1.5rem;
+}
+
+.wizard-progress-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.wizard-progress-fill {
+  height: 100%;
+  background: var(--grad-primary);
+  border-radius: 4px;
+}
+
+.wizard-progress-steps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.wizard-progress-steps span.active {
+  color: var(--primary);
+}
+
+.wizard-body {
+  position: relative;
+  min-height: 380px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.wizard-step {
+  width: 100%;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink2);
+  border: 1.5px solid var(--border);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--sl100);
+  color: var(--ink);
+}
+
+.diet-form {
+  padding: 24px;
+}
+
+.form-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ml-badge-small {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--purple);
+  background: var(--purple-lt);
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.condition-active {
+  border-color: var(--amber) !important;
+  color: var(--amber) !important;
+  box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.15) !important;
+}
+
+.condition-note {
+  font-size: 0.75rem;
+  color: var(--amber);
+  margin-top: 6px;
+  background: var(--amber-lt);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid var(--amber);
+}
+
+.activity-slider-wrap {
+  position: relative;
+  padding: 10px 0;
+}
+
+.activity-slider {
+  width: 100%;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.activity-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: var(--ink4);
+  margin-top: 4px;
+}
+
+.activity-value {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.form-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+

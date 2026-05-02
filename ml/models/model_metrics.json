@@ -1,0 +1,36 @@
+{
+  "classification": {
+    "accuracy": 1.0
+  },
+  "regression": {
+    "r2": 0.9099
+  },
+  "dataset": {
+    "features": [
+      "age",
+      "gender",
+      "weight_kg",
+      "height_cm",
+      "bmi",
+      "activity_level",
+      "goal_encoded",
+      "condition_encoded",
+      "region_encoded",
+      "bmi_sq",
+      "age_activity",
+      "weight_height",
+      "age_group"
+    ],
+    "target_reg": [
+      "protein_pct",
+      "carbs_pct",
+      "fat_pct"
+    ],
+    "classes": [
+      "maintenance",
+      "medical_diet",
+      "muscle_gain",
+      "weight_loss"
+    ]
+  }
+}

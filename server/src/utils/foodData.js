@@ -1,0 +1,142 @@
+const FOODS = {
+  north_india: {
+    breakfast: [
+      { name: 'Aloo paratha (2 pcs)',      kcal: 320, p: 8,  c: 52, f: 11, tags: ['veg'],              allergens: ['gluten'] },
+      { name: 'Poha with peanuts',         kcal: 220, p: 5,  c: 38, f: 6,  tags: ['veg'],              allergens: ['nuts'] },
+      { name: 'Besan chilla (2 pcs)',       kcal: 240, p: 11, c: 28, f: 9,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Dalia porridge',            kcal: 200, p: 6,  c: 38, f: 3,  tags: ['veg', 'vegan'],    allergens: ['gluten'] },
+      { name: 'Paneer paratha',            kcal: 360, p: 14, c: 48, f: 13, tags: ['veg'],              allergens: ['gluten', 'lactose'] },
+      { name: 'Egg bhurji + toast',        kcal: 310, p: 16, c: 26, f: 14, tags: ['eggetarian', 'nonveg'], allergens: ['gluten'] },
+      { name: 'Aloo sabzi + roti',         kcal: 280, p: 7,  c: 48, f: 7,  tags: ['veg', 'vegan'],    allergens: ['gluten'] },
+      { name: 'Moong dal cheela',          kcal: 230, p: 12, c: 30, f: 6,  tags: ['veg', 'vegan'],    allergens: [] },
+    ],
+    lunch: [
+      { name: 'Dal makhani + 2 roti',      kcal: 420, p: 18, c: 55, f: 12, tags: ['veg'],              allergens: ['gluten', 'lactose'] },
+      { name: 'Rajma chawal',              kcal: 480, p: 18, c: 72, f: 8,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Chana masala + rice',       kcal: 460, p: 16, c: 70, f: 9,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Paneer butter masala + naan', kcal: 560, p: 22, c: 58, f: 22, tags: ['veg'],           allergens: ['gluten', 'lactose'] },
+      { name: 'Chicken curry + rice',      kcal: 540, p: 32, c: 52, f: 18, tags: ['nonveg'],           allergens: [] },
+      { name: 'Kadai sabzi + roti',        kcal: 380, p: 10, c: 54, f: 13, tags: ['veg', 'vegan'],    allergens: ['gluten'] },
+      { name: 'Egg curry + rice',          kcal: 450, p: 20, c: 52, f: 16, tags: ['eggetarian', 'nonveg'], allergens: [] },
+      { name: 'Tofu matar + roti',         kcal: 370, p: 16, c: 44, f: 12, tags: ['vegan'],            allergens: ['soy', 'gluten'] },
+    ],
+    snack: [
+      { name: 'Lassi (250ml)',             kcal: 160, p: 6,  c: 20, f: 5,  tags: ['veg'],              allergens: ['lactose'] },
+      { name: 'Fruit chaat',              kcal: 120, p: 2,  c: 28, f: 1,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Roasted chana',            kcal: 140, p: 9,  c: 20, f: 3,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Banana + peanut butter',   kcal: 200, p: 5,  c: 28, f: 8,  tags: ['veg', 'vegan'],    allergens: ['nuts'] },
+      { name: 'Nimbu pani',              kcal: 50,  p: 0,  c: 12, f: 0,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Makhana (fox nuts)',       kcal: 130, p: 4,  c: 22, f: 3,  tags: ['veg', 'vegan'],    allergens: [] },
+    ],
+    dinner: [
+      { name: 'Palak paneer + 2 roti',    kcal: 400, p: 20, c: 40, f: 16, tags: ['veg'],              allergens: ['gluten', 'lactose'] },
+      { name: 'Dal tadka + rice',         kcal: 380, p: 14, c: 60, f: 8,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Chole + bhatura',          kcal: 520, p: 16, c: 72, f: 18, tags: ['veg', 'vegan'],    allergens: ['gluten'] },
+      { name: 'Grilled chicken + roti',   kcal: 420, p: 38, c: 30, f: 14, tags: ['nonveg'],           allergens: ['gluten'] },
+      { name: 'Mixed veg sabzi + roti',   kcal: 340, p: 9,  c: 52, f: 10, tags: ['veg', 'vegan'],    allergens: ['gluten'] },
+      { name: 'Mutton curry + rice',      kcal: 560, p: 34, c: 48, f: 22, tags: ['nonveg'],           allergens: [] },
+      { name: 'Tofu stir fry + rice',     kcal: 360, p: 16, c: 52, f: 10, tags: ['vegan'],            allergens: ['soy'] },
+    ],
+  },
+
+  south_india: {
+    breakfast: [
+      { name: 'Idli (3) + sambar',        kcal: 220, p: 7,  c: 42, f: 3,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Masala dosa + chutney',    kcal: 290, p: 6,  c: 48, f: 9,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Upma',                     kcal: 240, p: 6,  c: 40, f: 7,  tags: ['veg', 'vegan'],    allergens: ['gluten'] },
+      { name: 'Pongal + sambar',          kcal: 310, p: 8,  c: 52, f: 8,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Egg dosa',                 kcal: 320, p: 14, c: 40, f: 12, tags: ['eggetarian', 'nonveg'], allergens: [] },
+      { name: 'Pesarattu (moong dosa)',   kcal: 260, p: 10, c: 38, f: 6,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Rava idli (3 pcs)',        kcal: 250, p: 6,  c: 44, f: 6,  tags: ['veg'],              allergens: ['gluten', 'lactose'] },
+    ],
+    lunch: [
+      { name: 'Rice + sambar + rasam',    kcal: 450, p: 12, c: 80, f: 6,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Curd rice + pickle',       kcal: 360, p: 10, c: 60, f: 7,  tags: ['veg'],              allergens: ['lactose'] },
+      { name: 'Bisi bele bath',           kcal: 420, p: 14, c: 66, f: 10, tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Fish curry + rice',        kcal: 480, p: 28, c: 52, f: 16, tags: ['nonveg'],           allergens: [] },
+      { name: 'Vegetable kootu + rice',   kcal: 390, p: 10, c: 64, f: 9,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Chicken chettinad + rice', kcal: 540, p: 30, c: 54, f: 20, tags: ['nonveg'],           allergens: [] },
+      { name: 'Lemon rice + papad',       kcal: 370, p: 7,  c: 65, f: 9,  tags: ['veg', 'vegan'],    allergens: [] },
+    ],
+    snack: [
+      { name: 'Filter coffee',            kcal: 60,  p: 2,  c: 8,  f: 2,  tags: ['veg'],              allergens: ['lactose'] },
+      { name: 'Banana',                   kcal: 90,  p: 1,  c: 23, f: 0,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Murukku',                  kcal: 150, p: 3,  c: 22, f: 6,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Coconut water',            kcal: 50,  p: 0,  c: 12, f: 0,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Boiled groundnuts',        kcal: 130, p: 6,  c: 12, f: 7,  tags: ['veg', 'vegan'],    allergens: ['nuts'] },
+    ],
+    dinner: [
+      { name: 'Uttapam (2) + chutney',   kcal: 310, p: 8,  c: 50, f: 8,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Coconut rice + dal',       kcal: 400, p: 10, c: 65, f: 10, tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Appam + vegetable stew',   kcal: 350, p: 8,  c: 58, f: 8,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Prawn curry + rice',       kcal: 460, p: 26, c: 52, f: 14, tags: ['nonveg'],           allergens: [] },
+      { name: 'Sambar rice + papad',      kcal: 380, p: 12, c: 64, f: 7,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Chicken biryani',          kcal: 540, p: 28, c: 60, f: 18, tags: ['nonveg'],           allergens: [] },
+    ],
+  },
+
+  west_india: {
+    breakfast: [
+      { name: 'Thepla (2) + curd',        kcal: 280, p: 8,  c: 44, f: 8,  tags: ['veg'],              allergens: ['gluten', 'lactose'] },
+      { name: 'Dhokla (4 pcs)',           kcal: 200, p: 8,  c: 32, f: 4,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Poha batata',              kcal: 230, p: 5,  c: 40, f: 6,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Methi thepla',             kcal: 260, p: 7,  c: 40, f: 8,  tags: ['veg', 'vegan'],    allergens: ['gluten'] },
+      { name: 'Shira (semolina halwa)',   kcal: 310, p: 5,  c: 52, f: 9,  tags: ['veg'],              allergens: ['gluten', 'lactose'] },
+      { name: 'Egg bhurji + pav',         kcal: 330, p: 16, c: 34, f: 14, tags: ['eggetarian', 'nonveg'], allergens: ['gluten'] },
+    ],
+    lunch: [
+      { name: 'Puran poli + dal',         kcal: 460, p: 12, c: 78, f: 10, tags: ['veg'],              allergens: ['gluten'] },
+      { name: 'Pav bhaji',                kcal: 440, p: 10, c: 66, f: 14, tags: ['veg'],              allergens: ['gluten', 'lactose'] },
+      { name: 'Varan bhat (dal rice)',    kcal: 400, p: 13, c: 68, f: 7,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Misal pav',                kcal: 410, p: 14, c: 62, f: 11, tags: ['veg', 'vegan'],    allergens: ['gluten'] },
+      { name: 'Chicken kolhapuri + bhakri', kcal: 520, p: 30, c: 46, f: 20, tags: ['nonveg'],        allergens: [] },
+      { name: 'Khandvi + rice',           kcal: 360, p: 10, c: 58, f: 9,  tags: ['veg', 'vegan'],    allergens: [] },
+    ],
+    snack: [
+      { name: 'Chakli',                   kcal: 140, p: 2,  c: 20, f: 6,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Buttermilk (chaas)',        kcal: 60,  p: 3,  c: 6,  f: 1,  tags: ['veg'],              allergens: ['lactose'] },
+      { name: 'Chikki (jaggery peanut)',  kcal: 170, p: 4,  c: 22, f: 8,  tags: ['veg', 'vegan'],    allergens: ['nuts'] },
+      { name: 'Fresh coconut slice',      kcal: 100, p: 1,  c: 9,  f: 7,  tags: ['veg', 'vegan'],    allergens: [] },
+    ],
+    dinner: [
+      { name: 'Chapati + amti (sour dal)', kcal: 370, p: 12, c: 58, f: 8, tags: ['veg', 'vegan'],   allergens: ['gluten'] },
+      { name: 'Undhiyu + rice',           kcal: 420, p: 10, c: 66, f: 12, tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Fish curry + bhakri',      kcal: 440, p: 26, c: 46, f: 16, tags: ['nonveg'],           allergens: [] },
+      { name: 'Kadhi + rice',             kcal: 350, p: 8,  c: 60, f: 8,  tags: ['veg'],              allergens: ['lactose'] },
+      { name: 'Mutton sukka + chapati',   kcal: 500, p: 32, c: 36, f: 20, tags: ['nonveg'],           allergens: ['gluten'] },
+    ],
+  },
+
+  east_india: {
+    breakfast: [
+      { name: 'Luchi (3) + cholar dal',   kcal: 380, p: 10, c: 60, f: 12, tags: ['veg', 'vegan'],   allergens: ['gluten'] },
+      { name: 'Muri (puffed rice) mix',   kcal: 180, p: 3,  c: 36, f: 3,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Chire bhaja (poha)',        kcal: 210, p: 4,  c: 38, f: 5,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Sattu paratha',            kcal: 320, p: 12, c: 52, f: 7,  tags: ['veg', 'vegan'],    allergens: ['gluten'] },
+      { name: 'Egg roll (Kolkata style)', kcal: 340, p: 14, c: 44, f: 12, tags: ['eggetarian', 'nonveg'], allergens: ['gluten'] },
+    ],
+    lunch: [
+      { name: 'Rice + dal + begun bhaja', kcal: 460, p: 13, c: 76, f: 9,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Macher jhol + rice',       kcal: 480, p: 28, c: 54, f: 16, tags: ['nonveg'],           allergens: [] },
+      { name: 'Aloo posto + rice',        kcal: 400, p: 7,  c: 68, f: 11, tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Chicken rezala + rice',    kcal: 520, p: 28, c: 54, f: 20, tags: ['nonveg'],           allergens: [] },
+      { name: 'Shukto + rice',            kcal: 360, p: 8,  c: 62, f: 8,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Mutton kosha + rice',      kcal: 560, p: 30, c: 52, f: 24, tags: ['nonveg'],           allergens: [] },
+    ],
+    snack: [
+      { name: 'Singara (samosa)',          kcal: 200, p: 4,  c: 28, f: 9,  tags: ['veg', 'vegan'],    allergens: ['gluten'] },
+      { name: 'Mishti doi',               kcal: 150, p: 5,  c: 22, f: 4,  tags: ['veg'],              allergens: ['lactose'] },
+      { name: 'Jhalmuri',                 kcal: 130, p: 3,  c: 22, f: 4,  tags: ['veg', 'vegan'],    allergens: ['nuts'] },
+      { name: 'Rosogolla (1 pc)',         kcal: 120, p: 3,  c: 22, f: 2,  tags: ['veg'],              allergens: ['lactose'] },
+    ],
+    dinner: [
+      { name: 'Roti + cholar dal + sabzi', kcal: 380, p: 12, c: 58, f: 9, tags: ['veg', 'vegan'],   allergens: ['gluten'] },
+      { name: 'Prawn malai curry + rice',  kcal: 480, p: 24, c: 52, f: 18, tags: ['nonveg'],         allergens: ['lactose'] },
+      { name: 'Mochar ghonto + rice',     kcal: 360, p: 8,  c: 60, f: 9,  tags: ['veg', 'vegan'],    allergens: [] },
+      { name: 'Hilsa fish fry + rice',    kcal: 500, p: 26, c: 50, f: 20, tags: ['nonveg'],           allergens: [] },
+      { name: 'Dhokar dalna + rice',      kcal: 400, p: 12, c: 62, f: 11, tags: ['veg', 'vegan'],    allergens: [] },
+    ],
+  },
+};
+
+module.exports = FOODS;

@@ -1,0 +1,88 @@
+/* ── ML Status chip ─────────────────────────────────────────── */
+.ml-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border);
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  transition: all var(--transition);
+  animation: fadeUp 0.3s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ml-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ml-text strong {
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: var(--ink);
+}
+
+.ml-text span {
+  color: var(--ink4);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.ml-text b { color: var(--ink2); font-weight: 600; }
+
+.ml-text code {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  background: var(--sl100);
+  padding: 1px 5px;
+  border-radius: 5px;
+  color: var(--ink2);
+}
+
+/* ── Dot states ── */
+.ml-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.ml-dot.online  {
+  background: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22,163,74,0.2);
+  animation: blink 2.5s ease-in-out infinite;
+}
+.ml-dot.offline { background: #dc2626; box-shadow: 0 0 0 3px rgba(220,38,38,0.2); }
+.ml-dot.pulse   { background: var(--sl300); animation: mlpulse 1.2s ease-in-out infinite; }
+
+@keyframes mlpulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(22,163,74,0.2); }
+  50%       { box-shadow: 0 0 0 5px rgba(22,163,74,0.08); }
+}
+
+/* ── Color themes ── */
+.ml-online  {
+  background: linear-gradient(90deg, rgba(22,163,74,0.05) 0%, transparent 100%);
+  border-color: rgba(22,163,74,0.18);
+}
+.ml-offline {
+  background: linear-gradient(90deg, rgba(220,38,38,0.04) 0%, transparent 100%);
+  border-color: rgba(220,38,38,0.18);
+}
+.ml-loading {
+  background: var(--sl50);
+  color: var(--ink4);
+}
