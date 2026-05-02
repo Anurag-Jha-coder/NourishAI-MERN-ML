@@ -180,7 +180,7 @@ def predict():
 
     except Exception as e:
         traceback.print_exc()
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/retrain', methods=['POST', 'OPTIONS'])
 def retrain():
